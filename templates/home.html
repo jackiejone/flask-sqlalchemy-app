@@ -3,17 +3,18 @@
 <p>home</p>
 
 <form method="POST" action="/">
-    <input type="text" name="username">
+    <input type="text" name="item">
     <input type="submit" value="Add">
 </form>
 
 <form method="POST" action="./delete">
-    <input type="text" name="username">
-    <input type="submit" name="delete">
+    <input type="text" name="item">
+    <input type="submit" value="delete">
 </form>
 
-{% for user in users %}
-    <p>{{ user.username }}</p>
+<h3>Items in backpack</h3>
+{% for item in backpack_items %}
+    <p>{{item}}</p>
 {% endfor %}
 
 {% endblock %}

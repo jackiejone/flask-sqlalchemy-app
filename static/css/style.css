@@ -1,0 +1,36 @@
+html {
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+#wrapper {
+    margin: auto;
+    padding: auto;
+    width: 90%;
+    text-align: center;
+}
+
+.item {
+    display: block;
+}
+
+.item form {
+    display: inline-block;
+    width: auto;
+    margin: auto;
+}
+
+.item p {
+    display: inline-block;
+    width: auto;
+    margin: auto;
+}
+
+.errors {
+    list-style-type: none;
+    color: red;
+}
+
+ul {
+    padding-inline-start: 0px;
+}

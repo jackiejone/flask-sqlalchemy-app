@@ -1,20 +1,33 @@
 {% extends "layout.html"%}
 {% block content %}
-<p>home</p>
+<h1>Backpack</h1>
 
+{% from "formhelpers.html" import render_field %}
 <form method="POST" action="/">
-    <input type="text" name="item">
-    <input type="submit" value="Add">
+    {{ form_add.csrf_token }}
+    {{ render_field(form_add.item) }}
+    <input type="submit" value="add">
 </form>
 
 <form method="POST" action="./delete">
-    <input type="text" name="item">
+    {{ form_delete.csrf_token }}
+    {{ render_field(form_delete.item) }}
     <input type="submit" value="delete">
 </form>
 
 <h3>Items in backpack</h3>
 {% for item in backpack_items %}
-    <p>{{item}}</p>
+    <div class="item">
+        <p>{{item.item}} : {{item.amount}}</p>
+        <form method="post" action="./increase">
+            <input type="hidden" value="{{item.item}}" name="item_name">
+            <input type="submit" value="+">
+        </form>
+        <form method="post" action="./decrease">
+            <input type="hidden" value="{{item.item}}" name="item_name">
+            <input type="submit" value="-">
+        </form>
+    </div>
 {% endfor %}
 
 {% endblock %}

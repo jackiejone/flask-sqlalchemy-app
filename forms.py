@@ -1,11 +1,14 @@
-from wtforms import FlaskForm, StringField, validators, SubmitField
+from wtforms import StringField, validators, SubmitField
+from flask_wtf import FlaskForm
 
-class Add(Form):
-    item = StringField('Item', [validators.length(max=80)])
-    submit = SubmitField('Submit')
+class Add(FlaskForm):
+    item = StringField('Add Item', validators=[validators.length(min=1, max=80), validators.input_required()])
 
-    #FlaskForm or Form
+    
 
+class Delete(FlaskForm):
+    item = StringField('Delete Item', validators=[validators.length(min=1, max=80), validators.input_required()])
 
-
+#https://flask-wtf.readthedocs.io/en/stable/quickstart.html#creating-forms
+#https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
 

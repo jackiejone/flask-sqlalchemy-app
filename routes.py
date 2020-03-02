@@ -37,9 +37,11 @@ def home():
         if database_item == None: # checking if item is in database
             db.session.add(item)
             db.session.commit()
+            return redirect('/')
         else:
             database_item.amount = database_item.amount + 1 # Incrementing item amount if item is in database
             db.session.commit()
+            return redirect('/')
     backpack_items = Backpack.query.all()
     return render_template("home.html", backpack_items=backpack_items, form_add=form_add, form_delete=form_delete)
 
@@ -81,6 +83,10 @@ def decrease():
             db.session.delete(database_item)
             db.session.commit()
     return redirect('/')
+
+@app.errorhandler(404)
+def error404(e):
+    return render_template("error404.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

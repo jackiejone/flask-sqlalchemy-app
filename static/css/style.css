@@ -3,11 +3,24 @@ html {
     color: white;
 }
 
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
 #wrapper {
     margin: auto;
     padding: auto;
     width: 90%;
     text-align: center;
+}
+
+.home {
+    background-image: url('../images/dora.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 720px;
+    color: white;
 }
 
 .item {

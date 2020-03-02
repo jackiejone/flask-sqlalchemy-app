@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 {% block content %}
-<h1>Backpack</h1>
 
+<div class="home">
 {% from "formhelpers.html" import render_field %}
 <form method="POST" action="/">
     {{ form_add.csrf_token }}
@@ -29,5 +29,6 @@
         </form>
     </div>
 {% endfor %}
+</div>
 
 {% endblock %}

@@ -13,7 +13,7 @@ database_file = "sqlite:///{}".format(os.path.join(project_dir, "backpack_databa
 # Declaring app, database file, and secret key
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = database_file
-app.config['SECRET_KEY'] = '6342742364SSDAYDG^T&gyu&&*&sdghhs&*&87'
+app.config['SECRET_KEY'] = os.urandom(20)
 
 db = SQLAlchemy(app)
 

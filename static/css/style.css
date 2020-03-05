@@ -1,6 +1,6 @@
 html {
-    background-color: rgb(40, 40, 40);
-    color: white;
+    background-color: rgb(18, 18, 18);
+    color: rgb(254, 254, 254);
 }
 
 h1 {
@@ -18,7 +18,7 @@ h1 {
 .home {
     background-image: url('../images/dora.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     min-height: 720px;
     color: white;
 }

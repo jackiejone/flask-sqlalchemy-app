@@ -15,10 +15,21 @@
     <input type="submit" value="delete">
 </form>
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
 <h3>Items in backpack</h3>
 {% for item in backpack_items %}
     <div class="item">
-        <p>{{item.item}} : {{item.amount}}</p>
+        <p><pre>{{item.item}}</pre> : {{item.amount}}</p>
+        
         <form method="post" action="./increase">
             <input type="hidden" value="{{item.item}}" name="item_name">
             <input type="submit" value="+">

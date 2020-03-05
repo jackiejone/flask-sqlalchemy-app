@@ -23,8 +23,18 @@ h1 {
     color: white;
 }
 
+.flashes {
+    color: red;
+}
+
 .item {
     display: block;
+    text-transform: capitalize; /*Capitalises text*/
+    max-width: 500px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(40, 40, 40);
 }
 
 .item form {
@@ -39,6 +49,12 @@ h1 {
     margin: auto;
 }
 
+.item pre {
+    display: inline-block;
+    width: auto;
+    margin: auto;
+}
+
 .errors {
     list-style-type: none;
     color: red;
@@ -46,4 +62,9 @@ h1 {
 
 ul {
     padding-inline-start: 0px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
 }
